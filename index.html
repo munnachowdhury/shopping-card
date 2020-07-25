@@ -29,7 +29,7 @@
                            <input id="inputValue" type="text" class="form-control text-center" value="1">
                            <button id="btnPlus" class="btn btn-default"><i class="fas fa-plus"></i></button>
                         </div>
-                        <h5>$1219</h5>
+                        <h5>$<span id="firstProductPrice">1200</span></h5>
                         <img src="images/remove.png" alt="" class="remove-item">
                      </div>
                   </div>
@@ -43,12 +43,12 @@
                      </div>
                      <div class="col-md-5 center-item">
                         <div class="input-group number-spinner">
-                           <button id="btnMinus" class="btn btn-default"><i class="fas fa-minus"></i></button>
-                           <input id="inputValue" type="text" class="form-control text-center" value="1">
-                           <button id="btnPlus" class="btn btn-default"><i class="fas fa-plus"></i></button>
+                           <button id="btnMinus2" class="btn btn-default"><i class="fas fa-minus"></i></button>
+                           <input id="inputValue2" type="text" class="form-control text-center" value="1">
+                           <button id="btnPlus2" class="btn btn-default"><i class="fas fa-plus"></i></button>
 
                         </div>
-                        <h5>$59</h5>
+                        <h5>$<span id="ProductPrice2">1100</span></h5>
                         <img src="images/remove.png" alt="" class="remove-item">
                      </div>
                   </div>
@@ -79,29 +79,59 @@
    </section>
 
    <script>
+      // ........for first product.........
+
       // button plus event handler
+
       const btnPlus = document.getElementById("btnPlus").addEventListener("click", function(){
          plusSpanText("inputValue");
+         addProductPrice("firstProductPrice");
       });
-      
       function plusSpanText(id){
             const current = document.getElementById(id).value;
             const currentNumber = parseInt(current);
             const totalPlus = currentNumber +1;
             document.getElementById(id).value = totalPlus;
-            // console.log(current);
       }; 
+
       // button minus event handler
+
       const btnMinus = document.getElementById("btnMinus").addEventListener("click", function(){
          minusSpanText("inputValue");
+         deductProductPrice("firstProductPrice");
       });
-      
       function minusSpanText(id){
             const current = document.getElementById(id).value;
             const currentNumber = parseInt(current);
             const totalMinus = currentNumber -1;
-            document.getElementById(id).value = totalMinus;
-            // console.log(current);
+            document.getElementById(id).value = totalMinus;   
+      }
+
+      // ........for secound product.........
+
+      // button plus event handler
+      const btnPlus2 = document.getElementById("btnPlus2").addEventListener("click", function(){
+         plusSpanText("inputValue2");
+         // addProductPrice("ProductPrice2");
+      }); 
+
+      // button minus event handler
+      const btnMinus2 = document.getElementById("btnMinus2").addEventListener("click", function(){
+         minusSpanText("inputValue2");
+         // deductProductPrice("ProductPrice2");
+      });
+
+      function addProductPrice(id){
+         const price1 = document.getElementById(id).innerText;
+         const price1Number = parseInt(price1);
+         const totalPrice = price1Number + 1200;
+         document.getElementById(id).innerText = totalPrice;
+      }
+      function deductProductPrice(id){
+         const price1 = document.getElementById(id).innerText;
+         const price1Number = parseInt(price1);
+         const totalPrice = price1Number - 1200;
+         document.getElementById(id).innerText = totalPrice;
       }
   
    </script>
