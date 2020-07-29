@@ -104,14 +104,12 @@
          // first productButtonValue updating..
          const current1 = document.getElementById("changeValue1").value;
          const currentNumber1 = parseFloat(current1);
-         const totalPlus1 = currentNumber1 +1;
-         document.getElementById("changeValue1").value = totalPlus1;
+         document.getElementById("changeValue1").value = currentNumber1 +1;
 
          // first productPrice updating..
          const currentAmount1 = document.getElementById("productPrice1").innerText;
          const currentAmount1Number = parseFloat(currentAmount1);
-         const totalcurrentAmount1 = currentAmount1Number + 1200;
-         document.getElementById("productPrice1").innerText = totalcurrentAmount1;
+         document.getElementById("productPrice1").innerText = currentAmount1Number + 1200 ;
          
          // receipt part updating...
          const productPrice1 = document.getElementById("productPrice1").innerText;
@@ -167,7 +165,7 @@
 
       });
 
-      
+
       // ........forSecondProduct.........
 
       const btnPlus2 = document.getElementById("btnPlus2").addEventListener("click", function(){
@@ -175,14 +173,12 @@
          // second productButtonValue updating..
          const current2 = document.getElementById("changeValue2").value;
          const current2Number = parseFloat(current2);
-         const totalPlus2 = current2Number +1;
-         document.getElementById("changeValue2").value = totalPlus2;
+         document.getElementById("changeValue2").value = current2Number +1;
 
          // second productPrice updating..
          const price2 = document.getElementById("productPrice2").innerText;
          const price2Number = parseFloat(price2);
-         const totalCurrentPrice2 = price2Number + 1100;
-         document.getElementById("productPrice2").innerText = totalCurrentPrice2;
+         document.getElementById("productPrice2").innerText = price2Number + 1100;
 
          // receipt part updating...
          const productPrice1 = document.getElementById("productPrice1").innerText;
