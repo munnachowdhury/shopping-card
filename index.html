@@ -25,11 +25,11 @@
 
                      <div class="col-md-5 center-item">
                         <div class="input-group number-spinner">
-                           <button id="btnMinus" class="btn btn-default"><i class="fas fa-minus"></i></button>
-                           <input id="inputValue" type="text" class="form-control text-center" value="1">
-                           <button id="btnPlus" class="btn btn-default"><i class="fas fa-plus"></i></button>
+                           <button id="btnMinus1" class="btn btn-default"><i class="fas fa-minus"></i></button>
+                           <input id="changeValue1" type="text" class="form-control text-center" value="1">
+                           <button id="btnPlus1" class="btn btn-default"><i class="fas fa-plus"></i></button>
                         </div>
-                        <h5>$<span id="firstProductPrice">1200</span></h5>
+                        <h5>$<span id="productPrice1">1200</span></h5>
                         <img src="images/remove.png" alt="" class="remove-item">
                      </div>
                   </div>
@@ -44,11 +44,11 @@
                      <div class="col-md-5 center-item">
                         <div class="input-group number-spinner">
                            <button id="btnMinus2" class="btn btn-default"><i class="fas fa-minus"></i></button>
-                           <input id="inputValue2" type="text" class="form-control text-center" value="1">
+                           <input id="changeValue2" type="text" class="form-control text-center" value="1">
                            <button id="btnPlus2" class="btn btn-default"><i class="fas fa-plus"></i></button>
 
                         </div>
-                        <h5>$<span id="ProductPrice2">1100</span></h5>
+                        <h5>$<span id="productPrice2">1100</span></h5>
                         <img src="images/remove.png" alt="" class="remove-item">
                      </div>
                   </div>
@@ -64,9 +64,9 @@
                      </div>
 
                      <div class="col-md-4 status">
-                        <h5>$1,278</h5>
-                        <h5>$0</h5>
-                        <h5>$1,278</h5>
+                        <h5>$ <span id="subTotal">00</span></h5>
+                        <h5>$ <span id="taxId">00</span></h5>
+                        <h5>$ <span id="total">00</span></h5>
                      </div>
                   </div>
                </div>
@@ -79,60 +79,168 @@
    </section>
 
    <script>
-      // ........for first product.........
+      
+      // default product price
+      const productPrice1 = document.getElementById("productPrice1").innerText;
+      const productPrice1Number = parseFloat(productPrice1);
 
-      // button plus event handler
+      const productPrice2 = document.getElementById("productPrice2").innerText;
+      const productPrice2Number = parseFloat(productPrice2);
 
-      const btnPlus = document.getElementById("btnPlus").addEventListener("click", function(){
-         plusSpanText("inputValue");
-         addProductPrice("firstProductPrice");
+      const subTotalAmount = productPrice1Number + productPrice2Number;
+      document.getElementById("subTotal").innerText = subTotalAmount;
+      
+      const totalTax = subTotalAmount / 100 * 15;
+      document.getElementById("taxId").innerText = totalTax;
+      
+      const totalAmount = totalTax + subTotalAmount;
+      document.getElementById("total").innerText = totalAmount;
+
+
+      // ........forFirstProduct.........
+
+      const btnPlus1 = document.getElementById("btnPlus1").addEventListener("click", function(){
+
+         // first productButtonValue updating..
+         const current1 = document.getElementById("changeValue1").value;
+         const currentNumber1 = parseFloat(current1);
+         const totalPlus1 = currentNumber1 +1;
+         document.getElementById("changeValue1").value = totalPlus1;
+
+         // first productPrice updating..
+         const currentAmount1 = document.getElementById("productPrice1").innerText;
+         const currentAmount1Number = parseFloat(currentAmount1);
+         const totalcurrentAmount1 = currentAmount1Number + 1200;
+         document.getElementById("productPrice1").innerText = totalcurrentAmount1;
+         
+         // receipt part updating...
+         const productPrice1 = document.getElementById("productPrice1").innerText;
+         const productPrice1Number = parseFloat(productPrice1);
+
+         const productPrice2 = document.getElementById("productPrice2").innerText;
+         const productPrice2Number = parseFloat(productPrice2);
+
+         const subTotalAmount = productPrice1Number + productPrice2Number;
+         document.getElementById("subTotal").innerText = subTotalAmount;
+
+         const totalTax = subTotalAmount / 100 * 15;
+         document.getElementById("taxId").innerText = totalTax;
+
+         const totalAmount = totalTax + subTotalAmount;
+         document.getElementById("total").innerText = totalAmount;
+
       });
-      function plusSpanText(id){
-            const current = document.getElementById(id).value;
-            const currentNumber = parseInt(current);
-            const totalPlus = currentNumber +1;
-            document.getElementById(id).value = totalPlus;
-      }; 
 
-      // button minus event handler
+      const btnMinus1 = document.getElementById("btnMinus1").addEventListener("click", function(){
 
-      const btnMinus = document.getElementById("btnMinus").addEventListener("click", function(){
-         minusSpanText("inputValue");
-         deductProductPrice("firstProductPrice");
+         // first productButtonValue updating..
+         const current1 = document.getElementById("changeValue1").value;
+         const current1Number = parseFloat(current1);
+         if(current1Number>1){
+         const total1Minus = current1Number -1;
+         document.getElementById("changeValue1").value = total1Minus;
+         }; 
+         
+         // first productPrice updating..
+         const currentAmount1 = document.getElementById("productPrice1").innerText;
+         const currentAmount1Number = parseFloat(currentAmount1);
+         if(currentAmount1Number>1200){
+         const totalCurrentPrice1 = currentAmount1Number - 1200;
+         document.getElementById("productPrice1").innerText = totalCurrentPrice1;
+         };
+
+         // receipt part updating...
+         const productPrice1 = document.getElementById("productPrice1").innerText;
+         const productPrice1Number = parseFloat(productPrice1);
+
+         const productPrice2 = document.getElementById("productPrice2").innerText;
+         const productPrice2Number = parseFloat(productPrice2);
+
+         const subTotalAmount = productPrice1Number + productPrice2Number;
+         document.getElementById("subTotal").innerText = subTotalAmount;
+
+         const totalTax = subTotalAmount / 100 * 15;
+         document.getElementById("taxId").innerText = totalTax;
+
+         const totalAmount = totalTax + subTotalAmount;
+         document.getElementById("total").innerText = totalAmount;
+
       });
-      function minusSpanText(id){
-            const current = document.getElementById(id).value;
-            const currentNumber = parseInt(current);
-            const totalMinus = currentNumber -1;
-            document.getElementById(id).value = totalMinus;   
-      }
 
-      // ........for secound product.........
+      // ........forSecondProduct.........
 
-      // button plus event handler
       const btnPlus2 = document.getElementById("btnPlus2").addEventListener("click", function(){
-         plusSpanText("inputValue2");
-         // addProductPrice("ProductPrice2");
-      }); 
 
-      // button minus event handler
+         // second productButtonValue updating..
+         const current2 = document.getElementById("changeValue2").value;
+         const current2Number = parseFloat(current2);
+         const totalPlus2 = current2Number +1;
+         document.getElementById("changeValue2").value = totalPlus2;
+
+         // second productPrice updating..
+         const price2 = document.getElementById("productPrice2").innerText;
+         const price2Number = parseFloat(price2);
+         const totalCurrentPrice2 = price2Number + 1100;
+         document.getElementById("productPrice2").innerText = totalCurrentPrice2;
+
+         // receipt part updating...
+         const productPrice1 = document.getElementById("productPrice1").innerText;
+         const productPrice1Number = parseFloat(productPrice1);
+
+         const productPrice2 = document.getElementById("productPrice2").innerText;
+         const productPrice2Number = parseFloat(productPrice2);
+
+         const subTotalAmount = productPrice1Number + productPrice2Number;
+         document.getElementById("subTotal").innerText = subTotalAmount;
+
+         const totalTax = subTotalAmount / 100 * 15;
+         document.getElementById("taxId").innerText = totalTax;
+
+         const totalAmount = totalTax + subTotalAmount;
+         document.getElementById("total").innerText = totalAmount;
+
+         
+      }); 
+      
+      // // button minus2 event handler
       const btnMinus2 = document.getElementById("btnMinus2").addEventListener("click", function(){
-         minusSpanText("inputValue2");
-         // deductProductPrice("ProductPrice2");
+
+         // second productButtonValue updating..
+         const current2 = document.getElementById("changeValue2").value;
+         const current2Number = parseFloat(current2);
+         if(current2Number>1){
+            const total2Minus = current2Number -1;
+         document.getElementById("changeValue2").value = total2Minus;
+         };
+
+         // second productPrice updating..
+         const price2 = document.getElementById("productPrice2").innerText;
+         const price2Number = parseFloat(price2);
+         if(price2Number>1100){
+            const totalCurrentPrice2 = price2Number - 1100;
+         document.getElementById("productPrice2").innerText = totalCurrentPrice2;
+         };
+
+         // receipt part updating...
+         const productPrice1 = document.getElementById("productPrice1").innerText;
+         const productPrice1Number = parseFloat(productPrice1);
+
+         const productPrice2 = document.getElementById("productPrice2").innerText;
+         const productPrice2Number = parseFloat(productPrice2);
+
+         const subTotalAmount = productPrice1Number + productPrice2Number;
+         document.getElementById("subTotal").innerText = subTotalAmount;
+
+         const totalTax = subTotalAmount / 100 * 15;
+         document.getElementById("taxId").innerText = totalTax;
+
+         const totalAmount = totalTax + subTotalAmount;
+         document.getElementById("total").innerText = totalAmount;
       });
 
-      function addProductPrice(id){
-         const price1 = document.getElementById(id).innerText;
-         const price1Number = parseInt(price1);
-         const totalPricePlus = price1Number + 1200;
-         document.getElementById(id).innerText = totalPricePlus;
-      }
-      function deductProductPrice(id){
-         const price1 = document.getElementById(id).innerText;
-         const price1Number = parseInt(price1);
-         const totalPrice = price1Number - 1200;
-         document.getElementById(id).innerText = totalPrice;
-      }
+
+
+
   
    </script>
 </body>
