@@ -82,10 +82,10 @@
       
       // default product price
       const productPrice1 = document.getElementById("productPrice1").innerText;
-      const productPrice1Number = parseFloat(productPrice1);
+      const productPrice1Number = parseInt(productPrice1);
 
       const productPrice2 = document.getElementById("productPrice2").innerText;
-      const productPrice2Number = parseFloat(productPrice2);
+      const productPrice2Number = parseInt(productPrice2);
 
       const subTotalAmount = productPrice1Number + productPrice2Number;
       document.getElementById("subTotal").innerText = subTotalAmount;
@@ -103,20 +103,20 @@
 
          // first productButtonValue updating..
          const current1 = document.getElementById("changeValue1").value;
-         const currentNumber1 = parseFloat(current1);
+         const currentNumber1 = parseInt(current1);
          document.getElementById("changeValue1").value = currentNumber1 +1;
 
          // first productPrice updating..
          const currentAmount1 = document.getElementById("productPrice1").innerText;
-         const currentAmount1Number = parseFloat(currentAmount1);
+         const currentAmount1Number = parseInt(currentAmount1);
          document.getElementById("productPrice1").innerText = currentAmount1Number + 1200 ;
          
          // receipt part updating...
          const productPrice1 = document.getElementById("productPrice1").innerText;
-         const productPrice1Number = parseFloat(productPrice1);
+         const productPrice1Number = parseInt(productPrice1);
 
          const productPrice2 = document.getElementById("productPrice2").innerText;
-         const productPrice2Number = parseFloat(productPrice2);
+         const productPrice2Number = parseInt(productPrice2);
 
          const subTotalAmount = productPrice1Number + productPrice2Number;
          document.getElementById("subTotal").innerText = subTotalAmount;
@@ -133,7 +133,7 @@
 
          // first productButtonValue updating..
          const current1 = document.getElementById("changeValue1").value;
-         const current1Number = parseFloat(current1);
+         const current1Number = parseInt(current1);
          if(current1Number>1){
          const total1Minus = current1Number -1;
          document.getElementById("changeValue1").value = total1Minus;
@@ -141,7 +141,7 @@
          
          // first productPrice updating..
          const currentAmount1 = document.getElementById("productPrice1").innerText;
-         const currentAmount1Number = parseFloat(currentAmount1);
+         const currentAmount1Number = parseInt(currentAmount1);
          if(currentAmount1Number>1200){
          const totalCurrentPrice1 = currentAmount1Number - 1200;
          document.getElementById("productPrice1").innerText = totalCurrentPrice1;
@@ -149,10 +149,10 @@
 
          // receipt part updating...
          const productPrice1 = document.getElementById("productPrice1").innerText;
-         const productPrice1Number = parseFloat(productPrice1);
+         const productPrice1Number = parseInt(productPrice1);
 
          const productPrice2 = document.getElementById("productPrice2").innerText;
-         const productPrice2Number = parseFloat(productPrice2);
+         const productPrice2Number = parseInt(productPrice2);
 
          const subTotalAmount = productPrice1Number + productPrice2Number;
          document.getElementById("subTotal").innerText = subTotalAmount;
@@ -172,20 +172,20 @@
 
          // second productButtonValue updating..
          const current2 = document.getElementById("changeValue2").value;
-         const current2Number = parseFloat(current2);
+         const current2Number = parseInt(current2);
          document.getElementById("changeValue2").value = current2Number +1;
 
          // second productPrice updating..
          const price2 = document.getElementById("productPrice2").innerText;
-         const price2Number = parseFloat(price2);
+         const price2Number = parseInt(price2);
          document.getElementById("productPrice2").innerText = price2Number + 1100;
 
          // receipt part updating...
          const productPrice1 = document.getElementById("productPrice1").innerText;
-         const productPrice1Number = parseFloat(productPrice1);
+         const productPrice1Number = parseInt(productPrice1);
 
          const productPrice2 = document.getElementById("productPrice2").innerText;
-         const productPrice2Number = parseFloat(productPrice2);
+         const productPrice2Number = parseInt(productPrice2);
 
          const subTotalAmount = productPrice1Number + productPrice2Number;
          document.getElementById("subTotal").innerText = subTotalAmount;
@@ -203,7 +203,7 @@
 
          // second productButtonValue updating..
          const current2 = document.getElementById("changeValue2").value;
-         const current2Number = parseFloat(current2);
+         const current2Number = parseInt(current2);
          if(current2Number>1){
             const total2Minus = current2Number -1;
          document.getElementById("changeValue2").value = total2Minus;
@@ -211,7 +211,7 @@
 
          // second productPrice updating..
          const price2 = document.getElementById("productPrice2").innerText;
-         const price2Number = parseFloat(price2);
+         const price2Number = parseInt(price2);
          if(price2Number>1100){
             const totalCurrentPrice2 = price2Number - 1100;
          document.getElementById("productPrice2").innerText = totalCurrentPrice2;
@@ -219,10 +219,10 @@
 
          // receipt part updating...
          const productPrice1 = document.getElementById("productPrice1").innerText;
-         const productPrice1Number = parseFloat(productPrice1);
+         const productPrice1Number = parseInt(productPrice1);
 
          const productPrice2 = document.getElementById("productPrice2").innerText;
-         const productPrice2Number = parseFloat(productPrice2);
+         const productPrice2Number = parseInt(productPrice2);
 
          const subTotalAmount = productPrice1Number + productPrice2Number;
          document.getElementById("subTotal").innerText = subTotalAmount;
